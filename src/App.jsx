@@ -1,44 +1,55 @@
 import { useState } from 'react'
-import logo from './logo.svg'
+import Formulario from './components/Formulario'
+import styled from '@emotion/styled'
+import ImagenCripto from './img/imagen-criptos.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+
+  const Contenedor = styled.div`
+    max-width: 900px;
+    margin: 0 auto;
+    @media (min-width: 992px){
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+    }
+  `
+  const Imagen = styled.img`
+   max-width: 400px;
+   width: 80%;
+   margin: 100px auto 0 auto;
+   display: block;
+ `
+
+  const Heading = styled.h1`
+    color: #fff;
+    text-align: center;
+    margin-top: 8px;
+    font-weight: 700;
+    font-size: 34px;
+    &::after{
+      content: '';
+      width: 100px;
+      height: 6px;
+      background-color: #66a2fe ;
+      display: block;
+      margin: 10px auto;
+    }
+  `
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <Contenedor>
+      <Imagen
+        src={ImagenCripto}
+      />
+      <div>
+        <Heading>Cotiza criptomonedas en el instante</Heading>
+
+        <Formulario />
+      </div>
+    </Contenedor>
   )
 }
 
