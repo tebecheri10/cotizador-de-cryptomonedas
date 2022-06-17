@@ -5,7 +5,7 @@ App  para cotizar el valor de criptomonedas, basada en el curso de Juan Pablo De
 -Consumo de Api.<br/>
 -Custom-hook.
 
-web:https://criptopair.netlify.a
+web:https://criptopair.netlify.app
 
 
 ## Herramientas
